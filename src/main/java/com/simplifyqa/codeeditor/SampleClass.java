@@ -885,5 +885,18 @@ public boolean UATprojectlocallocalUAT(String value) {
     webDriver.getExecutionLogReporter().info("convertToUppercase executed with result: " + result);
     return true;
 }
+@SyncAction(uniqueId = "uat-04", groupName = "Generic", 
+    objectTemplate = @ObjectTemplate(name = TechnologyType.GENERIC, description = "This action converts a string to uppercase"), 
+    objectRequired = false)
+public boolean gituat(String value) {
+    if (value == null) {
+        log.info("The provided string is null.");
+        return false;
+    }
+    String result = value.toUpperCase();
+    log.info("Original String: " + value + ", Uppercase String: " + result);
+    webDriver.getExecutionLogReporter().info("convertToUppercase executed with result: " + result);
+    return true;
+}
 
 }
